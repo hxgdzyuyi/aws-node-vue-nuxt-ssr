@@ -11,6 +11,7 @@ module.exports = {
   },
 
   modules: [
+    '@nuxtjs/axios',
     '@nuxt/http',
     '@nuxtjs/apollo'
   ],
