@@ -21,7 +21,9 @@
   "license": "MIT",
   "dependencies": {
     "@nuxt/http": "^0.1.2",
+    "@nuxtjs/apollo": "^4.0.0-rc19",
     "axios": "^0.18.0",
+    "graphql-tag": "^2.10.3",
     "nuxt": "^2.6.3",
     "nuxt-start": "^2.6.3",
     "serverless-apigw-binary": "^0.4.4",

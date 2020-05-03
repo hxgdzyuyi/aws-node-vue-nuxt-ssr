@@ -14,12 +14,20 @@ module.exports = {
 
   modules: [
     '@nuxt/http',
+    '@nuxtjs/apollo'
   ],
 
   http: {
     baseURL: 'https://api.thedogapi.com/v1/',
   },
 
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://am2.archya.com/graphql'
+      }
+    }
+  },
   render: {
     compressor: false,
   },
