@@ -35,7 +35,7 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
     ['vue-scrollto/nuxt', { duration: 300 }]
   ],
 
