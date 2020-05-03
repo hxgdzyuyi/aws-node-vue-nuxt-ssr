@@ -24,7 +24,7 @@
     "@nuxtjs/apollo": "^4.0.0-rc19",
     "axios": "^0.18.0",
     "graphql-tag": "^2.10.3",
-    "nuxt": "^2.6.3",
+    "nuxt": "^2.12.2",
     "nuxt-start": "^2.6.3",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-http": "^2.0.1"
