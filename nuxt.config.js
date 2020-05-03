@@ -10,8 +10,6 @@ module.exports = {
     ],
   },
 
-  srcDir: 'client/',
-
   modules: [
     '@nuxt/http',
     '@nuxtjs/apollo'

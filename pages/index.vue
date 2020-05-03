@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is the Front Page.</h1>
+    <h1>V3 This is the Front Page.</h1>
     <pre>{{data}}</pre>
   </div>
 </template>
