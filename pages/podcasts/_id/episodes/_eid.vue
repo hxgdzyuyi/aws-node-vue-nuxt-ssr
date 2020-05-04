@@ -189,7 +189,7 @@ export default {
       this.$scrollTo(`#sentence-${id}`, 500, options)
     }
   },
-  async created() {
+  async mounted() {
     await this.getDetail()
   },
   methods: {
