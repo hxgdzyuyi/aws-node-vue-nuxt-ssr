@@ -1,66 +1,19 @@
-<style lang="stylus" scoped>
-.mod-podcast
-  padding 24px
-
-  .hd
-    margin 0 auto 10px
-
-    img
-      display block
-      width 100%
-</style>
-
-<template lang="pug">
-  .page-index
-    van-list(
-      v-model="loading"
-      :finished="latest.paging.finished"
-      @load="getLatest"
-    )
-      .mod-podcast(
-        v-for="item in latest.podcasts"
-        :key="item.id"
-      )
-        nuxt-link(:to="`/podcasts/${item.id}`")
-          .hd
-            img(:src="item.image_url" :alt="item.title")
-          .bd
-            h3.title {{item.title}}
-            .meta
-              .category {{item.itunes_category.join(', ')}}
+<template>
+  <div>
+    <h1>V5 This is the Front Page.</h1>
+    <pre>{{data}}</pre>
+  </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
-
-import Logo from '~/components/Logo.vue'
+import podcastsGql from '../gql/query/podcasts.gql'
 
 export default {
-  data() {
-    return {
-      loading: true
-    }
-  },
-  computed: {
-    ...mapGetters({ latest: 'podcast/latest' })
-  },
-  created() {
-    this.getLatest()
-  },
-  methods: {
-    ...mapActions({ getPodcasts: 'podcast/getPodcasts' }),
-    getLatest() {
-      const {
-        latest: {
-          paging: { page }
-        }
-      } = this
+  async asyncData(context) {
+    let client = context.app.apolloProvider.defaultClient
 
-      this.loading = true
-
-      this.loading = true
-      this.getPodcasts({ page }).then(() => (this.loading = false))
-    }
+    let data = await client.query({ query: podcastsGql, variables: { page: 1 } })
+    return { data };
   }
-}
+};
 </script>
