@@ -1,0 +1,28 @@
+query Episode($id: ID, $page: Int!) {
+  episode(id: $id) {
+    id
+    title
+    enclosure_url
+    podcast {
+      id
+      image_url
+      title
+      description
+      itunes_category
+    }
+    sentences(page: $page) {
+      data {
+        id
+        start_time
+        end_time
+        en_text
+        cn_text
+      }
+      paginatorInfo {
+        currentPage
+        hasMorePages
+      }
+    }
+    sentences_count
+  }
+}
