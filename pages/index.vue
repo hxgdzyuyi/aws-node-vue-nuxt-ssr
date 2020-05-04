@@ -44,8 +44,8 @@ export default {
   computed: {
     ...mapGetters({ latest: 'podcast/latest' })
   },
-  async mounted() {
-    await this.getLatest()
+  mounted() {
+    this.getLatest()
   },
   methods: {
     ...mapActions({ getPodcasts: 'podcast/getPodcasts' }),

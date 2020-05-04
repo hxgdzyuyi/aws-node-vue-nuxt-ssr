@@ -189,8 +189,8 @@ export default {
       this.$scrollTo(`#sentence-${id}`, 500, options)
     }
   },
-  async mounted() {
-    await this.getDetail()
+  mounted() {
+    this.getDetail()
   },
   methods: {
     ...mapActions({ getEpisode: 'episode/getEpisode' }),

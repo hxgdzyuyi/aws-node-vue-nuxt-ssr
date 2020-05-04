@@ -97,8 +97,8 @@ export default {
       }
     }
   },
-  async mounted() {
-    await this.getDetail()
+  mounted() {
+    this.getDetail()
   },
   methods: {
     ...mapActions({ getPodcast: 'podcast/getPodcast' }),
