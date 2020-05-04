@@ -38,15 +38,14 @@ import Logo from '~/components/Logo.vue'
 export default {
   data() {
     return {
-      loading: false
+      loading: true
     }
   },
   computed: {
     ...mapGetters({ latest: 'podcast/latest' })
   },
-  async fetch (context) {
-    const { store, params } = context
-    await store.dispatch('podcast/getPodcasts');
+  async created() {
+    await this.getLatest()
   },
   methods: {
     ...mapActions({ getPodcasts: 'podcast/getPodcasts' }),
