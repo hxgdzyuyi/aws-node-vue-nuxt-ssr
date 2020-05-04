@@ -97,8 +97,8 @@ export default {
       }
     }
   },
-  created() {
-    this.getDetail()
+  async created() {
+    await this.getDetail()
   },
   methods: {
     ...mapActions({ getPodcast: 'podcast/getPodcast' }),
@@ -111,7 +111,7 @@ export default {
       } = this
       this.loading = true
 
-      this.getPodcast({ id, page }).then(() => {
+      return this.getPodcast({ id, page }).then(() => {
         this.loading = false
       })
     }

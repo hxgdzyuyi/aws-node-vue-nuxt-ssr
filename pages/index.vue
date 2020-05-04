@@ -44,8 +44,8 @@ export default {
   computed: {
     ...mapGetters({ latest: 'podcast/latest' })
   },
-  created() {
-    this.getLatest()
+  async created() {
+    await this.getLatest()
   },
   methods: {
     ...mapActions({ getPodcasts: 'podcast/getPodcasts' }),
@@ -59,7 +59,7 @@ export default {
       this.loading = true
 
       this.loading = true
-      this.getPodcasts({ page }).then(() => (this.loading = false))
+      return this.getPodcasts({ page }).then(() => (this.loading = false))
     }
   }
 }

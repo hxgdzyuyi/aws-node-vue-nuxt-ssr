@@ -189,8 +189,8 @@ export default {
       this.$scrollTo(`#sentence-${id}`, 500, options)
     }
   },
-  created() {
-    this.getDetail()
+  async created() {
+    await this.getDetail()
   },
   methods: {
     ...mapActions({ getEpisode: 'episode/getEpisode' }),
@@ -206,7 +206,7 @@ export default {
 
       this.loading = true
 
-      this.getEpisode({ id, page }).then(() => {
+      return this.getEpisode({ id, page }).then(() => {
         this.loading = false
       })
     },
